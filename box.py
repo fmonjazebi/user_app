@@ -1,8 +1,6 @@
 from tkinter import *
 import tkinter.ttk as ttk
 
-from sqlalchemy_utils.types import password
-
 account_list = []
 
 def refresh_table():
@@ -76,8 +74,11 @@ Label(win, text="password").place(x=20,y=180)
 password = StringVar()
 Entry(win ,textvariable=password).place(x=90,y=180)
 
+access =StringVar()
+Radiobutton(win,text='Enable',variable=access,value="Enable").place(x=20, y=220)
+Radiobutton(win,text='Disable',variable=access,value="Disable").place(x=20, y=250)
 
-
+access.set("Enable")
 
 table = ttk.Treeview(win, columns=[1, 2, 3,4,5], show="headings")
 
